@@ -1,0 +1,30 @@
+<body>
+<script>
+    function printNewArray(numbers) {
+        let array = parse(numbers)
+        let newArray = array.filter(el=>(el%3==0))
+
+        alert(`[${newArray}]`);
+        console.log(newArray)
+        let label = document.getElementById("newArray");
+        label.innerText = `[${newArray}]`;
+    }
+
+    function parse (numbers){
+        let array = numbers.split(',');
+        array = array.map(el=> Number(el));
+        return array;
+    }
+
+</script>
+
+    <label for="numbers">Введите числа массива через запятую:</label><br>
+    </br>
+    <input type="text" id="numbers" name="numbers" value="1,2,3,4,5,6"><br>
+    </br>
+    <button onclick="printNewArray(numbers.value)">Выполнить</button><br>
+    </br>
+    <label>Новый массив</label><br>
+    <label id = "newArray"></label><br>
+
+</body>
